@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculator App!"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/etValOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:hint="enter value 1"
+        />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#A1DC7C"
+            android:text="+"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnMinus"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#A1DC7C"
+            android:textStyle="bold"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/btnTimes"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:text="x"
+            android:textStyle="bold"
+            android:backgroundTint="#A1DC7C"/>
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:text="÷"
+            android:textStyle="bold"
+            android:backgroundTint="#A1DC7C"/>
+        </LinearLayout>
+
+        <EditText
+        android:id="@+id/etValTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:hint="enter value 2" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="159dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#A1DC7C"
+        android:text="Button"
+        android:layout_gravity="center"
+
+       />
+
+        <TextView
+            android:id="@+id/tvRes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:text=" "/>
+
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
