@@ -79,7 +79,7 @@
         android:layout_width="159dp"
         android:layout_height="55dp"
         android:backgroundTint="#A1DC7C"
-        android:text="Button"
+        android:text="Answer!"
         android:layout_gravity="center"
 
        />

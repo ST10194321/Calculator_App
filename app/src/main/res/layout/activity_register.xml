@@ -7,13 +7,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
-
+    tools:context=".register">
     <TextView
-        android:id="@+id/login"
+        android:id="@+id/reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Register"
         android:textStyle="bold"
         android:textSize="20dp"
         android:gravity="top"
@@ -21,56 +20,51 @@
         />
 
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/emailReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter Your Email:"
         android:textStyle="bold"
-        android:layout_below="@+id/login"/>
+        android:layout_below="@+id/reg"/>
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etEmailReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/email"
+        android:layout_below="@+id/emailReg"
         android:layout_marginTop="-5dp"
         android:ems="10"
-        android:hint="Email"
         android:inputType="textEmailAddress" />
 
     <TextView
-        android:id="@+id/pass"
+        android:id="@+id/passReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Your Email:"
-        android:layout_below="@+id/etEmail"
+        android:text="Enter Your Password:"
+        android:layout_below="@+id/etEmailReg"
         android:textStyle="bold"/>
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etPasswordReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="Password"
-        android:layout_below="@+id/etEmail"/>
+        android:layout_below="@+id/etEmailReg"/>
 
+    <Button
+        android:id="@+id/btnReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPasswordReg"
+        android:backgroundTint="#A1DC7C"
+        android:layout_marginTop="15dp"
+        android:text="Register" />
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etPassword"
+        android:layout_below="@+id/btnReg"
         android:backgroundTint="#A1DC7C"
         android:layout_marginTop="15dp"
         android:text="Login" />
-
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etPassword"
-        android:backgroundTint="#A1DC7C"
-        android:layout_marginTop="15dp"
-        android:text="Register" />
-
-
 </LinearLayout>

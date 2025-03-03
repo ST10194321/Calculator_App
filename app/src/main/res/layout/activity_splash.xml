@@ -20,12 +20,14 @@
 
         android:layout_below="@id/imageView"
         />
+
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
         app:srcCompat="@mipmap/calclogo_foreground" />
-
 
     <Button
         android:id="@+id/btnNext"
@@ -34,7 +36,7 @@
         android:layout_below="@id/textView2"
         android:layout_marginTop="29dp"
         android:backgroundTint="#A1DC7C"
-        android:text="Button"
+        android:text="Enter App"
         android:textSize="20dp" />
 </RelativeLayout>
 
