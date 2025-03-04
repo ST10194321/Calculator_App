@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 class register : AppCompatActivity() {
     private lateinit var etEmailReg : EditText
     private lateinit var etPasswordReg : EditText
+    private lateinit var etConPasswordReg : EditText
     private lateinit var btnReg : Button
     private lateinit var btnLogin : Button
 
@@ -37,6 +38,7 @@ class register : AppCompatActivity() {
         btnReg = findViewById(R.id.btnReg)
         etEmailReg = findViewById(R.id.etEmailReg)
         etPasswordReg = findViewById(R.id.etPasswordReg)
+        etConPasswordReg = findViewById(R.id.etConPasswordReg)
         btnLogin = findViewById(R.id.btnLogin)
 
         btnLogin.setOnClickListener{
@@ -48,17 +50,25 @@ class register : AppCompatActivity() {
         btnReg.setOnClickListener{
             val email = etEmailReg.text.toString().trim()
             val password = etPasswordReg.text.toString().trim()
+            val conPass = etConPasswordReg.text.toString().trim()
 
-            if(email.isEmpty() || password.isEmpty()){
+            if(email.isEmpty() || password.isEmpty()||conPass.isEmpty()){
                 Toast.makeText(this, "Email and password can't be empty", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+            if (password != conPass) {
+                Toast.makeText(this, "Passwords do not match", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
             //use firebase to create new user
             auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this){
-                task ->
+                   task ->
                 if(task.isSuccessful){
                     Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show()
+                    val i = Intent(this,login::class.java)
+                    startActivity(i)
+                    finish()
                 }else{
                     Toast.makeText(this,"Registration failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                 }

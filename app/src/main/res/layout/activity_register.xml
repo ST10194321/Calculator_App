@@ -51,6 +51,21 @@
         android:inputType="textPassword"
         android:layout_below="@+id/etEmailReg"/>
 
+    <TextView
+        android:id="@+id/conPassReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confrim Your Password:"
+        android:layout_below="@+id/etPasswordReg"
+        android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/etConPasswordReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_below="@+id/conPassReg"/>
+
     <Button
         android:id="@+id/btnReg"
         android:layout_width="wrap_content"
