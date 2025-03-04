@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 
 class register : AppCompatActivity() {
+    //delcare variables
     private lateinit var etEmailReg : EditText
     private lateinit var etPasswordReg : EditText
     private lateinit var etConPasswordReg : EditText
@@ -34,28 +35,32 @@ class register : AppCompatActivity() {
         //use firebase auth to get instance of
         auth = FirebaseAuth.getInstance()
 
-        //in
+
         btnReg = findViewById(R.id.btnReg)
         etEmailReg = findViewById(R.id.etEmailReg)
         etPasswordReg = findViewById(R.id.etPasswordReg)
         etConPasswordReg = findViewById(R.id.etConPasswordReg)
         btnLogin = findViewById(R.id.btnLogin)
 
+        //button to send to login page
         btnLogin.setOnClickListener{
 
             val i = Intent(this,login::class.java)
             startActivity(i)
         }
 
+        //button to confirm registration
         btnReg.setOnClickListener{
             val email = etEmailReg.text.toString().trim()
             val password = etPasswordReg.text.toString().trim()
             val conPass = etConPasswordReg.text.toString().trim()
 
+            //validation to check if fields are filled
             if(email.isEmpty() || password.isEmpty()||conPass.isEmpty()){
                 Toast.makeText(this, "Email and password can't be empty", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
+            //validation to check if passwords match
             if (password != conPass) {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
@@ -64,11 +69,13 @@ class register : AppCompatActivity() {
             //use firebase to create new user
             auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this){
                    task ->
+                //if reg successful displays a message and takes user to login
                 if(task.isSuccessful){
                     Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show()
                     val i = Intent(this,login::class.java)
                     startActivity(i)
                     finish()
+                    //if registration fails , prompts user to try again
                 }else{
                     Toast.makeText(this,"Registration failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                 }
